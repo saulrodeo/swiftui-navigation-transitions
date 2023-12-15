@@ -190,14 +190,14 @@ extension UINavigationController {
 		if edgePanRecognizer == nil {
 			edgePanRecognizer = UIScreenEdgePanGestureRecognizer()
 			edgePanRecognizer.edges = .left
-			edgePanRecognizer.addTarget(self, action: #selector(handleInteraction))
+			edgePanRecognizer.addTarget(self, action: #selector(handleEdgeInteraction))
 			edgePanRecognizer.strongDelegate = NavigationGestureRecognizerDelegate(controller: self)
 			view.addGestureRecognizer(edgePanRecognizer)
 		}
 
 		if panRecognizer == nil {
 			panRecognizer = UIPanGestureRecognizer()
-			panRecognizer.addTarget(self, action: #selector(handleInteraction))
+			panRecognizer.addTarget(self, action: #selector(handlePanInteraction))
 			panRecognizer.strongDelegate = NavigationGestureRecognizerDelegate(controller: self)
 			view.addGestureRecognizer(panRecognizer)
 		}
